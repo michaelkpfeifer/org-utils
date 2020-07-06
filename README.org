@@ -1,0 +1,14 @@
+* Utilities for Org Mode
+
+** org-count-logbook-entries
+
+~org-count-logbook-entries~ displays the number of entries in the LOGBOOK drawer
+of the current entry.
+
+** org-oldest-timestamp-in-entry
+
+~org-oldest-timestamp-in-entry~ returns the oldest timestamp in the current
+entry.
+
+~org-oldest-timestamp-in-entry~ can be used as a custom sort function when
+sorting entries using ~org-sort-entries~.
