@@ -1,5 +1,17 @@
+;;; org-utils.el --- Utilities for working with Org mode
+
+;;; Commentary:
+
+;; This file provides a few utilities for working with Org mode.
+
+;;; Code:
+
+(declare-function org-entry-beginning-position "org")
+(declare-function org-entry-end-position "org")
+(declare-function org-get-entry "org")
+
 (defun org-count-logbook-entries ()
-  "Count the number of entries in the LOGBOOK drawer"
+  "Count the number of entries in the LOGBOOK drawer."
   (interactive)
   (save-excursion
     (save-restriction
@@ -13,7 +25,7 @@
                                    "^ *- ")))))))))
 
 (defun org-oldest-timestamp-in-entry ()
-  "Get the oldest timestamp in an entry"
+  "Get the oldest timestamp in an entry."
   (let ((current-entry (org-get-entry))
         (position 0)
         (matches ())
@@ -29,3 +41,5 @@
         (setq position (match-end 0)))
       matches)
     (car (cl-sort matches 'string-lessp))))
+
+;;; org-utils.el ends here
